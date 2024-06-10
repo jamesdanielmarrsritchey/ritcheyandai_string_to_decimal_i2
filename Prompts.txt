@@ -1,0 +1,113 @@
+jamesdanielmarrsritchey: Using Javascript, write a function which converts a string to a decimal representation. Do not use any external libraries.
+
+GitHub Copilot: Sure, here's a simple function in JavaScript that converts a string to a decimal representation using the built-in `charCodeAt` method:
+
+```javascript
+function stringToDecimal(str) {
+    let decimalRepresentation = '';
+    for (let i = 0; i < str.length; i++) {
+        decimalRepresentation += str.charCodeAt(i).toString();
+    }
+    return decimalRepresentation;
+}
+```
+
+This function iterates over each character in the string, converts it to its decimal (ASCII) representation using `charCodeAt`, and then appends it to the `decimalRepresentation` string. The function finally returns the `decimalRepresentation` string.
+
+jamesdanielmarrsritchey: Provide an example of how to use it to change the innerHTML of an element.
+
+GitHub Copilot: Sure, here's an example of how you can use the [`stringToDecimal`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22external%22%3A%22file%3A%2F%2F%2Fhome%2Fuser1%2FProjects%2Fritchey%2526ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22path%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A0%2C%22character%22%3A0%7D%5D "/home/user1/Projects/ritchey&ai_string_to_decimal_i1_v1/function.js") function to change the `innerHTML` of an element. This example assumes that there is an element with the id `myElement` in your HTML.
+
+```javascript
+document.querySelector("#myButton").addEventListener("click", function() {
+    const element = document.querySelector("#myElement");
+    if (element) {
+        const decimalRepresentation = stringToDecimal(element.innerHTML);
+        element.innerHTML = decimalRepresentation;
+    }
+});
+```
+
+In this example, when a button with the id `myButton` is clicked, the `innerHTML` of the element with the id `myElement` is converted to its decimal representation using the `stringToDecimal` function, and then the `innerHTML` of the element is replaced with this decimal representation.
+
+jamesdanielmarrsritchey: Provide an example that is initiated by an onOnclick of an element.
+
+GitHub Copilot: Sure, here's an example of how you can use the `stringToDecimal` function to change the `innerHTML` of an element when it is clicked. This example assumes that there is an element with the id `myElement` in your HTML.
+
+```javascript
+document.querySelector("#myElement").addEventListener("click", function() {
+    const element = this;
+    const decimalRepresentation = stringToDecimal(element.innerHTML);
+    element.innerHTML = decimalRepresentation;
+});
+```
+
+In this example, when the element with the id `myElement` is clicked, the `innerHTML` of the element is converted to its decimal representation using the `stringToDecimal` function, and then the `innerHTML` of the element is replaced with this decimal representation.
+
+jamesdanielmarrsritchey: Provide an example that runs automatically.
+
+GitHub Copilot: Sure, here's an example of how you can use the [`stringToDecimal`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22external%22%3A%22file%3A%2F%2F%2Fhome%2Fuser1%2FProjects%2Fritchey%2526ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22path%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A0%2C%22character%22%3A0%7D%5D "/home/user1/Projects/ritchey&ai_string_to_decimal_i1_v1/function.js") function to automatically change the `innerHTML` of an element when the page loads. This example assumes that there is an element with the id `myElement` in your HTML.
+
+```javascript
+window.onload = function() {
+    const element = document.querySelector("#myElement");
+    if (element) {
+        const decimalRepresentation = stringToDecimal(element.innerHTML);
+        element.innerHTML = decimalRepresentation;
+    }
+};
+```
+
+In this example, when the page loads, the `innerHTML` of the element with the id `myElement` is converted to its decimal representation using the `stringToDecimal` function, and then the `innerHTML` of the element is replaced with this decimal representation.
+
+jamesdanielmarrsritchey: The full code for the function is: ```function stringToDecimal(str) {
+    let decimalRepresentation = '';
+    for (let i = 0; i < str.length; i++) {
+        decimalRepresentation += str.charCodeAt(i).toString();
+    }
+    return decimalRepresentation;
+}
+
+GitHub Copilot: The [`stringToDecimal`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22external%22%3A%22file%3A%2F%2F%2Fhome%2Fuser1%2FProjects%2Fritchey%2526ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22path%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A0%2C%22character%22%3A0%7D%5D "/home/user1/Projects/ritchey&ai_string_to_decimal_i1_v1/function.js") function you provided converts a string into its decimal representation. Here's how it works:
+
+1. It initializes an empty string [`decimalRepresentation`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22external%22%3A%22file%3A%2F%2F%2Fhome%2Fuser1%2FProjects%2Fritchey%2526ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22path%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A1%2C%22character%22%3A4%7D%5D "/home/user1/Projects/ritchey&ai_string_to_decimal_i1_v1/function.js") to store the decimal representation of the input string.
+
+2. It then loops over each character in the input string [`str`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22external%22%3A%22file%3A%2F%2F%2Fhome%2Fuser1%2FProjects%2Fritchey%2526ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22path%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A0%2C%22character%22%3A25%7D%5D "/home/user1/Projects/ritchey&ai_string_to_decimal_i1_v1/function.js").
+
+3. For each character, it uses the `charCodeAt` method to get the Unicode value of the character. This value is a decimal number.
+
+4. It converts this decimal number to a string using the `toString` method and appends it to [`decimalRepresentation`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22external%22%3A%22file%3A%2F%2F%2Fhome%2Fuser1%2FProjects%2Fritchey%2526ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22path%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A1%2C%22character%22%3A4%7D%5D "/home/user1/Projects/ritchey&ai_string_to_decimal_i1_v1/function.js").
+
+5. After all characters have been processed, it returns [`decimalRepresentation`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22external%22%3A%22file%3A%2F%2F%2Fhome%2Fuser1%2FProjects%2Fritchey%2526ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22path%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A1%2C%22character%22%3A4%7D%5D "/home/user1/Projects/ritchey&ai_string_to_decimal_i1_v1/function.js").
+
+This function essentially converts each character in the input string to its decimal Unicode value and concatenates these decimal values into a single string.
+
+jamesdanielmarrsritchey: Update this function to have a delimiter parameter. The default delimiter should be " ". If the delimiter is "\n" treat it as a line ending. If the delimiter is "\t" treat it as a tab. If the delimiter is "" there should be no delimiter. The delimiter goes between each section of the representation that represents 1 byte.
+
+GitHub Copilot: Sure, here's how you can modify the [`stringToDecimal`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22fsPath%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22external%22%3A%22file%3A%2F%2F%2Fhome%2Fuser1%2FProjects%2Fritchey%2526ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22path%22%3A%22%2Fhome%2Fuser1%2FProjects%2Fritchey%26ai_string_to_decimal_i1_v1%2Ffunction.js%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A0%2C%22character%22%3A0%7D%5D "/home/user1/Projects/ritchey&ai_string_to_decimal_i1_v1/function.js") function to include a `delimiter` parameter:
+
+```javascript
+function stringToDecimal(str, delimiter = " ") {
+    let decimalRepresentation = '';
+    for (let i = 0; i < str.length; i++) {
+        decimalRepresentation += str.charCodeAt(i).toString();
+        if (i < str.length - 1) {
+            switch (delimiter) {
+                case "\\n":
+                    decimalRepresentation += "\n";
+                    break;
+                case "\\t":
+                    decimalRepresentation += "\t";
+                    break;
+                case "":
+                    break;
+                default:
+                    decimalRepresentation += delimiter;
+            }
+        }
+    }
+    return decimalRepresentation;
+}
+```
+
+In this updated function, a second parameter `delimiter` is added with a default value of `" "`. After each character is converted to its decimal representation, the function checks if the delimiter is `"\\n"`, `"\\t"`, or `""`. If it's `"\\n"`, a newline is added to `decimalRepresentation`. If it's `"\\t"`, a tab is added. If it's `""`, nothing is added. For any other value, the delimiter itself is added. This is done for all characters except the last one, to avoid adding an unnecessary delimiter at the end.
